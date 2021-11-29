@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-about',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private elementRef: ElementRef) { }
 
   ngOnInit(): void {
   }
 
+  ngAfterViewInit(){
+    this.elementRef.nativeElement.ownerDocument.body.style.background = "url(/assets/images/Cielo.jpg)";
+ }
 }
